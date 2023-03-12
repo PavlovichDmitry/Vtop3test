@@ -19,7 +19,7 @@ const browserSync = require("browser-sync").create();
 /* paths*/
 
 const srcPath = "src/";
-const distPath = "dist/";
+const distPath = "docs/";
 
 const path = {
     build: {
