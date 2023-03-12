@@ -14,6 +14,7 @@ const uglify = require("gulp-uglify");
 const del = require("del");
 const sass = require('gulp-sass')(require('sass'));
 const imagemin = require("gulp-imagemin");
+const browserSync = require("browser-sync").create();
 
 /* paths*/
 
@@ -44,10 +45,18 @@ const path = {
     },
     clean: './' + distPath
 };
+function serve() {
+    browserSync.init({
+        server: {
+            baseDir: './' + distPath
+        }
+    });
+};
 function html() {
     return src(path.src.html, { base: srcPath})
         .pipe(plumber())
         .pipe(dest(path.build.html))
+        .pipe(browserSync.reload({stream: true}))
 };
 function css() {
     return src(path.src.css, { base: srcPath + "assets/scss/"})
@@ -67,6 +76,7 @@ function css() {
             extname: ".css"
         }))
         .pipe(dest(path.build.css))
+        .pipe(browserSync.reload({stream: true}))
 };
 function js() {
     return src(path.src.js, { base: srcPath + "assets/js/"})
@@ -79,6 +89,7 @@ function js() {
             extname: ".js"
         }))
         .pipe(dest(path.build.js))
+        .pipe(browserSync.reload({stream: true}))
 };
 function clean() {
     return del(path.clean)
@@ -97,9 +108,11 @@ function media() {
             })
         ]))
         .pipe(dest(path.build.media))
+        .pipe(browserSync.reload({stream: true}))
 };
 function fonts() {
     return src(path.src.fonts, { base: srcPath + "assets/fonts/"})
+        .pipe(browserSync.reload({stream: true}))
 };
 
 function watchFiles() {
@@ -111,7 +124,7 @@ function watchFiles() {
 };
 
 const build = gulp.series(clean, gulp.parallel(html, css, js, media, fonts));
-const watch = gulp.parallel(build, watchFiles)
+const watch = gulp.parallel(build, watchFiles, serve)
 
 exports.html = html;
 exports.css = css;
@@ -121,3 +134,4 @@ exports.media = media;
 exports.fonts = fonts;
 exports.build = build;
 exports.watch = watch;
+exports.default = watch;

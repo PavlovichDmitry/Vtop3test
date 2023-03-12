@@ -1,0 +1,35 @@
+@font-face {
+  font-family: "PTSans";
+  src: url("../fonts/PTSans-Regular.ttf") format("ttf");
+  src: url("../fonts/PTSans-Regular.woff") format("woff");
+  font-display: swap;
+}
+@font-face {
+  font-family: "WorkSans-regular";
+  src: url("../fonts/WorkSans-Regular.ttf") format("ttf");
+  src: url("../fonts/WorkSans-Regular.woff") format("woff");
+  font-display: swap;
+}
+@font-face {
+  font-family: "WorkSans-semiBold";
+  src: url("../fonts/WorkSans-SemiBold.ttf") format("ttf");
+  src: url("../fonts/WorkSans-SemiBold.woff") format("woff");
+  font-display: swap;
+}
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "WorkSans-regular";
+}
+
+:root {
+  --body_bcgr: #F4F5FC;
+  --font_black: #111;
+  --blue_color: #5A61ED;
+  --svg_fill: #F9FAFF;
+  --danger_color: #FF2222;
+  --danger_color_border: #FF2828;
+}
