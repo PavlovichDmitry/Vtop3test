@@ -6,6 +6,12 @@ body {
   height: 100vh;
   background-color: var(--body_bcgr);
 }
+@media only screen and (min-width: 320px) and (max-width: 680px) {
+  body {
+    height: -moz-max-content;
+    height: max-content;
+  }
+}
 
 .container {
   position: relative;
@@ -14,11 +20,32 @@ body {
   height: 481px;
   background-color: #fff;
 }
+@media only screen and (min-width: 320px) and (max-width: 680px) {
+  .container {
+    min-width: 100%;
+    width: 100%;
+    height: -moz-max-content;
+    height: max-content;
+    padding: 20px 10px 70px;
+  }
+}
 .container__nav {
   position: relative;
   width: 137.2px;
   height: 100%;
-  background-color: #5A61ED;
+  background-color: var(--blue_color);
+}
+@media only screen and (min-width: 320px) and (max-width: 680px) {
+  .container__nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 20;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 10%;
+  }
 }
 .container__nav__text {
   position: absolute;
@@ -32,6 +59,13 @@ body {
   color: #fff;
   transform: rotate(-90deg);
 }
+@media only screen and (min-width: 320px) and (max-width: 680px) {
+  .container__nav__text {
+    position: static;
+    text-align: center;
+    transform: rotate(0);
+  }
+}
 .container__main {
   position: relative;
   z-index: 5;
@@ -39,6 +73,12 @@ body {
   width: 527.8px;
   height: 100%;
   background-color: transparent;
+}
+@media only screen and (min-width: 320px) and (max-width: 680px) {
+  .container__main {
+    padding: 0;
+    width: 100%;
+  }
 }
 .container__main__title {
   font-size: 1.375rem;
@@ -61,40 +101,95 @@ body {
   color: var(--font_black);
 }
 .container__main__form__fieldset {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 7px;
   padding: 20px 0 0;
   border: none;
 }
-.container__main__form__fieldset__name, .container__main__form__fieldset__lastName, .container__main__form__fieldset__nationality, .container__main__form__fieldset__email, .container__main__form__fieldset__birthday, .container__main__form__fieldset__gender, .container__main__form__fieldset__password, .container__main__form__fieldset__confirmPassword {
+@media only screen and (min-width: 320px) and (max-width: 680px) {
+  .container__main__form__fieldset {
+    grid-template-columns: 1fr;
+  }
+}
+.container__main__form__fieldset__firstName, .container__main__form__fieldset__lastName, .container__main__form__fieldset__nationality, .container__main__form__fieldset__email, .container__main__form__fieldset__birthday, .container__main__form__fieldset__gender, .container__main__form__fieldset__password, .container__main__form__fieldset__confirmPassword {
+  position: relative;
   display: flex;
   flex-direction: column;
   margin: 0 0 17px;
   font-size: 0.75rem;
   line-height: 0.875rem;
   letter-spacing: -0.35px;
-  color: #7C7C7C;
+  color: var(--grey_color);
+  opacity: 1;
 }
-.container__main__form__fieldset__name input, .container__main__form__fieldset__lastName input, .container__main__form__fieldset__nationality input, .container__main__form__fieldset__email input, .container__main__form__fieldset__birthday input, .container__main__form__fieldset__gender input, .container__main__form__fieldset__password input, .container__main__form__fieldset__confirmPassword input {
-  padding: 0 0 5px;
+@media only screen and (min-height: 650px) {
+  .container__main__form__fieldset__firstName, .container__main__form__fieldset__lastName, .container__main__form__fieldset__nationality, .container__main__form__fieldset__email, .container__main__form__fieldset__birthday, .container__main__form__fieldset__gender, .container__main__form__fieldset__password, .container__main__form__fieldset__confirmPassword {
+    margin: 0 0 2vh;
+  }
+}
+@media only screen and (min-height: 700px) {
+  .container__main__form__fieldset__firstName, .container__main__form__fieldset__lastName, .container__main__form__fieldset__nationality, .container__main__form__fieldset__email, .container__main__form__fieldset__birthday, .container__main__form__fieldset__gender, .container__main__form__fieldset__password, .container__main__form__fieldset__confirmPassword {
+    margin: 0 0 3vh;
+  }
+}
+@media only screen and (min-height: 800px) {
+  .container__main__form__fieldset__firstName, .container__main__form__fieldset__lastName, .container__main__form__fieldset__nationality, .container__main__form__fieldset__email, .container__main__form__fieldset__birthday, .container__main__form__fieldset__gender, .container__main__form__fieldset__password, .container__main__form__fieldset__confirmPassword {
+    margin: 0 0 4vh;
+  }
+}
+@media only screen and (min-height: 850px) {
+  .container__main__form__fieldset__firstName, .container__main__form__fieldset__lastName, .container__main__form__fieldset__nationality, .container__main__form__fieldset__email, .container__main__form__fieldset__birthday, .container__main__form__fieldset__gender, .container__main__form__fieldset__password, .container__main__form__fieldset__confirmPassword {
+    margin: 0 0 4.5vh;
+  }
+}
+.container__main__form__fieldset__firstName input, .container__main__form__fieldset__lastName input, .container__main__form__fieldset__nationality input, .container__main__form__fieldset__email input, .container__main__form__fieldset__birthday input, .container__main__form__fieldset__gender input, .container__main__form__fieldset__password input, .container__main__form__fieldset__confirmPassword input {
+  padding: 0 0 4.5px;
   font-family: "WorkSans-semiBold";
   font-size: 0.875rem;
   line-height: 1rem;
   border: none;
   outline: none;
-  border-bottom: 0.7px solid #F2F2F2;
-  color: #111;
+  border-bottom: 0.7px solid var(--border_input_color);
+  color: var(--font_black);
   background-color: transparent;
 }
-.container__main__form__fieldset__name input:first-child, .container__main__form__fieldset__lastName input:first-child, .container__main__form__fieldset__nationality input:first-child, .container__main__form__fieldset__email input:first-child, .container__main__form__fieldset__birthday input:first-child, .container__main__form__fieldset__gender input:first-child, .container__main__form__fieldset__password input:first-child, .container__main__form__fieldset__confirmPassword input:first-child {
+.container__main__form__fieldset__firstName input:first-child, .container__main__form__fieldset__lastName input:first-child, .container__main__form__fieldset__nationality input:first-child, .container__main__form__fieldset__email input:first-child, .container__main__form__fieldset__birthday input:first-child, .container__main__form__fieldset__gender input:first-child, .container__main__form__fieldset__password input:first-child, .container__main__form__fieldset__confirmPassword input:first-child {
   margin: 5px 0 0;
 }
-.container__main__form__fieldset__name input::-moz-placeholder, .container__main__form__fieldset__lastName input::-moz-placeholder, .container__main__form__fieldset__nationality input::-moz-placeholder, .container__main__form__fieldset__email input::-moz-placeholder, .container__main__form__fieldset__birthday input::-moz-placeholder, .container__main__form__fieldset__gender input::-moz-placeholder, .container__main__form__fieldset__password input::-moz-placeholder, .container__main__form__fieldset__confirmPassword input::-moz-placeholder {
-  color: #111;
+.container__main__form__fieldset__firstName input::-moz-placeholder, .container__main__form__fieldset__lastName input::-moz-placeholder, .container__main__form__fieldset__nationality input::-moz-placeholder, .container__main__form__fieldset__email input::-moz-placeholder, .container__main__form__fieldset__birthday input::-moz-placeholder, .container__main__form__fieldset__gender input::-moz-placeholder, .container__main__form__fieldset__password input::-moz-placeholder, .container__main__form__fieldset__confirmPassword input::-moz-placeholder {
+  color: var(--font_black);
 }
-.container__main__form__fieldset__name input::placeholder, .container__main__form__fieldset__lastName input::placeholder, .container__main__form__fieldset__nationality input::placeholder, .container__main__form__fieldset__email input::placeholder, .container__main__form__fieldset__birthday input::placeholder, .container__main__form__fieldset__gender input::placeholder, .container__main__form__fieldset__password input::placeholder, .container__main__form__fieldset__confirmPassword input::placeholder {
-  color: #111;
+.container__main__form__fieldset__firstName input::placeholder, .container__main__form__fieldset__lastName input::placeholder, .container__main__form__fieldset__nationality input::placeholder, .container__main__form__fieldset__email input::placeholder, .container__main__form__fieldset__birthday input::placeholder, .container__main__form__fieldset__gender input::placeholder, .container__main__form__fieldset__password input::placeholder, .container__main__form__fieldset__confirmPassword input::placeholder {
+  color: var(--font_black);
+}
+.container__main__form__fieldset__nationality {
+  position: relative;
+  width: 234px;
+}
+.container__main__form__fieldset__nationality svg {
+  position: absolute;
+  top: calc(50% + 4px);
+  right: 0;
+  pointer-events: none;
+}
+.container__main__form__fieldset__nationality select {
+  padding: 5px 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  font-family: "WorkSans-semiBold";
+  font-size: 0.875rem;
+  line-height: 1rem;
+  letter-spacing: -0.35px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+  background-color: transparent;
+  border: none;
+  border-bottom: 0.7px solid var(--border_input_color);
 }
 .container__main__form__fieldset__birthday__selectWrapper {
   flex-direction: row;
@@ -127,7 +222,7 @@ body {
   outline: none;
   background-color: transparent;
   border: none;
-  border-bottom: 0.7px solid #F2F2F2;
+  border-bottom: 0.7px solid var(--border_input_color);
 }
 .container__main__form__fieldset__birthday__selectWrapper label .date {
   width: 56px;
@@ -149,7 +244,7 @@ body {
   font-size: 0.875rem;
   line-height: 1rem;
   letter-spacing: -0.35px;
-  color: #111;
+  color: var(--font_black);
 }
 .container__main__form__fieldset__gender__inputWrapper .male::before,
 .container__main__form__fieldset__gender__inputWrapper .female::before {
@@ -161,7 +256,7 @@ body {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  border: 0.7px solid #5A61ED;
+  border: 0.7px solid var(--blue_color);
 }
 .container__main__form__fieldset__gender__inputWrapper .male::after,
 .container__main__form__fieldset__gender__inputWrapper .female::after {
@@ -173,7 +268,7 @@ body {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background-color: #5A61ED;
+  background-color: var(--blue_color);
 }
 .container__main__form__fieldset__gender__inputWrapper .female {
   margin: 5px 0 0 38px;
@@ -183,6 +278,38 @@ body {
 }
 .container__main__form__fieldset__gender__inputWrapper input[type=radio]:checked + .male::after, .container__main__form__fieldset__gender__inputWrapper input[type=radio]:checked + .female::after {
   display: block;
+}
+.container__main__form__fieldset__firstName {
+  animation: name-out 0.5s ease 0.5s;
+  animation-fill-mode: both;
+}
+.container__main__form__fieldset__lastName {
+  animation: lastName-out 0.5s ease 1s;
+  animation-fill-mode: both;
+}
+.container__main__form__fieldset__nationality {
+  animation: nationality-out 0.5s ease 1.5s;
+  animation-fill-mode: both;
+}
+.container__main__form__fieldset__email {
+  animation: email-out 0.5s ease 2s;
+  animation-fill-mode: both;
+}
+.container__main__form__fieldset__birthday {
+  animation: birthday-out 0.5s ease 2.5s;
+  animation-fill-mode: both;
+}
+.container__main__form__fieldset__gender {
+  animation: gender-out 0.5s ease 3s;
+  animation-fill-mode: both;
+}
+.container__main__form__fieldset__password {
+  animation: password-out 0.5s ease 3.5s;
+  animation-fill-mode: both;
+}
+.container__main__form__fieldset__confirmPassword {
+  animation: confirmPassword-out 0.5s ease 4s;
+  animation-fill-mode: both;
 }
 .container__main__form__submitBtn {
   position: absolute;
@@ -198,6 +325,12 @@ body {
   color: #fff;
   cursor: pointer;
 }
+@media only screen and (min-width: 320px) and (max-width: 680px) {
+  .container__main__form__submitBtn {
+    bottom: -7px;
+    right: 10px;
+  }
+}
 .container__main__signIn {
   position: absolute;
   bottom: 44px;
@@ -205,6 +338,12 @@ body {
   font-size: 0.81rem;
   line-height: 0.95rem;
   letter-spacing: -0.015rem;
+}
+@media only screen and (min-width: 320px) and (max-width: 680px) {
+  .container__main__signIn {
+    position: static;
+    margin: 30px 0 0;
+  }
 }
 .container__main__signIn__link {
   margin: 0 0 0 3px;
@@ -215,6 +354,13 @@ body {
   bottom: 0;
   right: 0;
 }
+@media only screen and (min-width: 320px) and (max-width: 680px) {
+  .container .mainSvg {
+    bottom: 40px;
+    width: 180px;
+    height: 200px;
+  }
+}
 .container .mainSvg path {
   fill: none;
   stroke-width: 2px;
@@ -222,6 +368,43 @@ body {
   stroke-dasharray: 6488;
   stroke-dashoffset: 6488;
   animation: drawMainSvg 10s linear forwards;
+}
+.container__modalWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  width: 665px;
+  height: 481px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.container__modalWrapper__modal {
+  position: absolute;
+  top: calc(50% - 100px);
+  left: calc(50% - 200px);
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 400px;
+  height: 200px;
+  padding: 10px;
+  background-color: #fff;
+}
+.container__modalWrapper__modal__closeBtn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px;
+  border: none;
+  background-color: var(--blue_color);
+  color: #fff;
+  cursor: pointer;
+}
+
+.hiddenModal {
+  display: none;
 }
 
 @keyframes drawMainSvg {
@@ -231,5 +414,85 @@ body {
   100% {
     fill: var(--svg_fill);
     stroke-dashoffset: 0;
+  }
+}
+@keyframes name-out {
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+  0% {
+    top: 50px;
+    opacity: 0;
+  }
+}
+@keyframes lastName-out {
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+  0% {
+    top: 50px;
+    opacity: 0;
+  }
+}
+@keyframes nationality-out {
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+  0% {
+    top: 50px;
+    opacity: 0;
+  }
+}
+@keyframes email-out {
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+  0% {
+    top: 50px;
+    opacity: 0;
+  }
+}
+@keyframes birthday-out {
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+  0% {
+    top: 50px;
+    opacity: 0;
+  }
+}
+@keyframes gender-out {
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+  0% {
+    top: 50px;
+    opacity: 0;
+  }
+}
+@keyframes password-out {
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+  0% {
+    top: 50px;
+    opacity: 0;
+  }
+}
+@keyframes confirmPassword-out {
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+  0% {
+    top: 50px;
+    opacity: 0;
   }
 }

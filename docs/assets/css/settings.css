@@ -16,6 +16,17 @@
   src: url("../fonts/WorkSans-SemiBold.woff") format("woff");
   font-display: swap;
 }
+@media only screen and (min-width: 320px) and (max-width: 360px) {
+  html {
+    font-size: 10px;
+  }
+}
+@media only screen and (min-width: 360px) and (max-width: 480px) {
+  html {
+    font-size: 16px;
+  }
+}
+
 *,
 *::after,
 *::before {
@@ -29,7 +40,8 @@
   --body_bcgr: #F4F5FC;
   --font_black: #111;
   --blue_color: #5A61ED;
+  --border_input_color: #F2F2F2;
   --svg_fill: #F9FAFF;
-  --danger_color: #FF2222;
-  --danger_color_border: #FF2828;
+  --grey_color: #7C7C7C;
+  --animate__delay: 1s;
 }

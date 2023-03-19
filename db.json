@@ -1,0 +1,17 @@
+{
+  "users": [
+    {
+      "id": 1679240875321,
+      "name": "name",
+      "lastName": "last",
+      "nationality": "American",
+      "birthday": {
+        "date": "1",
+        "month": "12",
+        "year": "1995"
+      },
+      "gender": "male",
+      "userPassword": "12345Qwert"
+    }
+  ]
+}
