@@ -403,10 +403,28 @@ body {
   cursor: pointer;
 }
 
+.trem {
+  animation: trem 0.2s ease 0.5s;
+}
+
 .hiddenModal {
   display: none;
 }
 
+@keyframes trem {
+  100% {
+    transform: rotate(10deg);
+  }
+  75% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+}
 @keyframes drawMainSvg {
   70% {
     fill: var(--svg_fill);

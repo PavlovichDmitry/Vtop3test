@@ -91,13 +91,16 @@ const SubmitNewUser =  async(user) => {
         titleMessage.style.marginLeft = '43.8px';
         title.innerText = 'Thank You!';
         titleMessage.innerText = 'you registered!';
+        nameInput.value = '';
+        lastNameInput.value = '';
+        userEmail.value = '';
+        userPassword.value = '';
+        userConfirmPassword.value = '';
     } else {
-        form.style.display = 'none';
-        title.style.marginLeft = '43.8px';
-        title.style.marginTop = '176.5px';
-        titleMessage.style.marginLeft = '43.8px';
-        title.innerText = 'Error';
-        titleMessage.innerText = 'Try again!';
+        submitBtn.classList.add('trem');
+        setTimeout(() => {
+            submitBtn.classList.remove('trem');
+        }, 1000)
     }
 };
 userEmail.addEventListener('focus', () => {
